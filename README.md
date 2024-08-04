@@ -24,6 +24,7 @@ To get started with the FinTech Application, follow these steps in same sequence
 1. **Clone the repository**:
     ```bash
     git clone https://github.com/your-username/fintech-app.git
+    cd FinTech-Application
     ```
 
 2. **Set up environment variables**:
@@ -74,10 +75,22 @@ Use {{server}} as `http://localhost:5873`
   }
   // please create an user before login
   ```
+- **Curl**: 
+
+  ```bash
+  curl -X POST $server/api/v1/users/login -H "Content-Type: application/json" -d '{"username": "usrname", "password": "1234"}'
+  ```
+
 
 **Logout**
 - **Method**: POST
 - **URL**: `{{server}}/users/logout`
+- **Curl**: 
+
+  ```bash
+  curl -X POST $server/users/logout
+  ```
+
 
 **User Management**
 
@@ -94,14 +107,32 @@ Use {{server}} as `http://localhost:5873`
      "address": "h5-iitk"
   }
   ```
+- **Curl**: 
+
+  ```bash
+  curl -X POST $server/users/transfer -H "Content-Type: application/json" -d '{"amount": 50, "to": 630700956484, "password": "1234"}'
+  ```
+
 
 **Get User**
 - **Method**: GET
 - **URL**: `{{server}}/users/getuser`
+- **Curl**: 
+
+  ```bash
+  curl -X GET $server/users/getuser
+  ```
+
 
 **Get Transactions**
 - **Method**: GET
 - **URL**: `{{server}}/users/get_transactions`
+- **Curl**: 
+
+  ```bash
+  curl -X POST $server/users/transfer -H "Content-Type: application/json" -d '{"amount": 50, "to": 630700956484, "password": "1234"}'
+  ```
+
 
 **Account Management**
 
@@ -115,6 +146,12 @@ Use {{server}} as `http://localhost:5873`
      "password": "221101"
   }
   ```
+- **Curl**: 
+
+  ```bash
+  curl -X POST $server/users/deposit -H "Content-Type: application/json" -d '{"amount": 500, "password": "1234"}'
+  ```
+
 
 **Withdraw**
 - **Method**: POST
@@ -126,6 +163,12 @@ Use {{server}} as `http://localhost:5873`
      "password": "221101"
   }
   ```
+- **Curl**: 
+
+  ```bash
+  curl -X POST $server/users/withdraw -H "Content-Type: application/json" -d '{"amount": 100, "password": "1234"}'
+  ```
+
 
 **Transfer**
 - **Method**: POST
@@ -138,6 +181,13 @@ Use {{server}} as `http://localhost:5873`
      "password": "221101"
   }
   ```
+- **Curl**: 
+
+  ```bash
+  curl -X POST $server/users/transfer -H "Content-Type: application/json" -d '{"amount": 50, "to": 630700956484, "password": "1234"}'
+  ```
+
+
 
 ## Technologies Used
 
